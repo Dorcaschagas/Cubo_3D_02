@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30%;
+    align-items: center;
+}
+
+h1{
+    color: greenyellow;
+    text-align: center;
+    transform-style:preserve-3d ;
+    transform:translateZ(20px);
+    box-shadow: 1px 1px 100px green;
+    padding: 10px;
+}
+
+.cubo{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    animation: animacao 10s linear infinite;
+}
+
+@keyframes animacao{
+    0%
+    {
+        transform: rotateX(-15deg) rotateY(0deg);
+
+    }
+    100%{
+        transform: rotateX(-15deg) rotateY(360deg);
+    }
+}
+
+.lados{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black,greenyellow);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top{
+    position: absolute;
+    background-color: rgb(8, 18, 0);
+    width: 200px;
+    height: 200px;
+    transform-style:preserve-3d ;
+    transform: rotateX(90deg) translateZ(100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top::before{
+    content: '';
+    position: absolute;
+    background-color: green;
+    filter: blur(50px);
+    width: 200%;
+    height: 200%;
+    transform-style:preserve-3d ;
+    transform: translateZ(-400px);
+}
